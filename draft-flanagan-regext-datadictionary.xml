@@ -11,7 +11,7 @@
 <!ENTITY RFC8174 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8174.xml">
 ]>
 
-<rfc ipr="trust200902" docName="draft-flanagan-regext-datadictionary-00" category="std">
+<rfc ipr="trust200902" docName="draft-flanagan-regext-datadictionary-01" category="std">
 
 <?rfc toc="yes"?>
 <?rfc sortrefs="yes"?>
@@ -54,7 +54,7 @@
       </address>
     </author>
 
-    <date year="2021" month="October" day="11"/>
+    <date year="2021" month="November" day="18"/>
 
     <area>Applications</area>
     <workgroup></workgroup>
@@ -79,9 +79,11 @@
 
 <t>The DNS Data Dictionary provides a common set of names and definitions for
   data elements which may be used in a DNS related protocol.  The dictionary
-  is intended to be inclusive and[*] not obligatory.  That is, the existence of
+  is intended to be inclusive and not obligatory.  That is, the existence of
   a data element in this dictionary does not imply the data element must be used
-  or recognized in any particular protocol.  We also expect that each
+  or recognized in any particular protocol. The items in this dictionary should
+  represent the union for what is in existing relevant protocols, and should
+  prevent divergence in new protocols. We also expect that each
   application or protocol may have additional requirements specific to the
   application or protocol. Such additional requirements should be
   documented as part of the application or protocol specification.</t>
@@ -133,16 +135,21 @@ insensitive in the IANA registry.</t>
 <t>This is the domain name in an EPP <xref target="RFC5731"/> domain object and
 it MUST be in A-Label format.</t>
 
+<t>See also "Domain name" in <xref target="RFC8499"/>.</t>
+
 </section>
 <section anchor="element-name-registry" title="Element name: Registry">
 
 <t>The name of the registry. This data element is text/string with no
 naming convention enforced.</t>
 
+<t>See also "Registry" in <xref target="RFC8499"/>.</t>
+
 </section>
 
 <section anchor="element-name-ns" title="Element name: NS">
   <t>The authoritative name server for the domain.<xref target="RFC1034"/></t>
+  <t>See also "Authoritative server" in <xref target="RFC8499"/></t>
 </section>
 
 <section anchor="element-name-reg-creation-date" title="Element name: Registration Creation Date">
