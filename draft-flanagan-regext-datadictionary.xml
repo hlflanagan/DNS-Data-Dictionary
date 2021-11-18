@@ -100,6 +100,10 @@
   changes to the DNS Data Dictionary to be additions as opposed to deletions or
   changes.</t>
 
+<t>[Comment: We are looking for additional authors and contributors to add to
+  and improve the data dictionary, keeping in line with the RFC Series Editor
+  statement on authorship. <eref target="https://www.rfc-editor.org/pipermail/rfc-interest/2015-May/008869.html"/>]</t>
+
 <section anchor="requirements-language" title="Requirements Language">
 
 <t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
