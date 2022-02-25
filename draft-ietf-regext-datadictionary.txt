@@ -5,11 +5,11 @@
 Network Working Group                                   H. Flanagan, Ed.
 Internet-Draft                                                S. Crocker
 Intended status: Standards Track             Edgemoor Research Institute
-Expires: May 22, 2022                                  November 18, 2021
+Expires: July 21, 2022                                  January 17, 2022
 
 
                           DNS Data Dictionary
-                draft-flanagan-regext-datadictionary-01
+                  draft-ietf-regext-datadictionary-00
 
 Abstract
 
@@ -36,11 +36,11 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on May 22, 2022.
+   This Internet-Draft will expire on July 21, 2022.
 
 Copyright Notice
 
-   Copyright (c) 2021 IETF Trust and the persons identified as the
+   Copyright (c) 2022 IETF Trust and the persons identified as the
    document authors.  All rights reserved.
 
    This document is subject to BCP 78 and the IETF Trust's Legal
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 1]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 1]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
    the Trust Legal Provisions and are provided without warranty as
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 2]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 2]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
    7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  12
@@ -165,9 +165,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 3]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 3]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
    each data element is assigned a unique name and that the syntax of
@@ -221,9 +221,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 4]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 4]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
 2.6.  Element name: Registration Updated Date
@@ -277,9 +277,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 5]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 5]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
 2.17.  Element name: Reserved
@@ -333,9 +333,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 6]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 6]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
 2.25.  Element name: Phone
@@ -389,9 +389,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 7]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 7]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
 3.  IANA Considerations
@@ -445,9 +445,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 8]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 8]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
    be possible to register multiple data elements or reports that
@@ -501,9 +501,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                  [Page 9]
+Flanagan & Crocker        Expires July 21, 2022                 [Page 9]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
    Status
@@ -557,9 +557,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                 [Page 10]
+Flanagan & Crocker        Expires July 21, 2022                [Page 10]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
    Registrant:
@@ -613,9 +613,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                 [Page 11]
+Flanagan & Crocker        Expires July 21, 2022                [Page 11]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
    be subject to privacy protection according to an applicable privacy
@@ -669,9 +669,9 @@ Internet-Draft             DNS Data Dictionary             November 2021
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                 [Page 12]
+Flanagan & Crocker        Expires July 21, 2022                [Page 12]
 
-Internet-Draft             DNS Data Dictionary             November 2021
+Internet-Draft             DNS Data Dictionary              January 2022
 
 
    [RFC3629]  Yergeau, F., "UTF-8, a transformation format of ISO
@@ -725,4 +725,4 @@ Authors' Addresses
 
 
 
-Flanagan & Crocker        Expires May 22, 2022                 [Page 13]
+Flanagan & Crocker        Expires July 21, 2022                [Page 13]

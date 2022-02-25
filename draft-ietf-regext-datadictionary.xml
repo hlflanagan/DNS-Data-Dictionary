@@ -1,0 +1,604 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <?xml-stylesheet type="text/xsl" href="rfc2629.xslt" ?>
+
+<!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
+<!ENTITY RFC1034 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.1034.xml">
+<!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
+<!ENTITY RFC3629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3629.xml">
+<!ENTITY RFC5322 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5322.xml">
+<!ENTITY RFC5731 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5731.xml">
+<!ENTITY RFC8126 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8126.xml">
+<!ENTITY RFC8174 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8174.xml">
+<!ENTITY RFC8499 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8499.xml">
+]>
+
+<rfc ipr="trust200902" docName="draft-ietf-regext-datadictionary-00" category="std">
+
+<?rfc toc="yes"?>
+<?rfc sortrefs="yes"?>
+<?rfc symrefs="yes"?>
+
+  <front>
+    <title>DNS Data Dictionary</title>
+
+    <author initials="H." surname="Flanagan" fullname="Heather Flanagan" role="editor">
+      <organization>Edgemoor Research Institute</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city></city>
+
+          <code></code>
+          <country></country>
+        </postal>
+        <phone></phone>
+        <facsimile></facsimile>
+        <email>hlf@sphericalcowconsulting.com</email>
+
+      </address>
+    </author>
+
+    <author initials="S." surname="Crocker" fullname="Steve Crocker">
+      <organization>Edgemoor Research Institute</organization>
+      <address>
+        <postal>
+          <street></street>
+          <city></city>
+
+          <code></code>
+          <country></country>
+        </postal>
+        <phone></phone>
+        <facsimile></facsimile>
+        <email>steve@shinkuro.com</email>
+
+      </address>
+    </author>
+
+    <date year="2022" month="January" day="17"/>
+
+    <area>Applications</area>
+    <workgroup></workgroup>
+    <keyword>Internet-Draft</keyword>
+
+    <abstract>
+
+<t>Multiple applications related to the domain name system are built around a
+  list of data elements.  There is currently no unified public list of these
+  data elements, nor is there an organized and independent change control
+  process.  This document codifies the multiple similar but not quite
+  identical lists of data elements into a neutral DNS Data Dictionary to be
+  maintained as an independent IANA Registry.</t>
+
+    </abstract>
+   </front>
+
+   <middle>
+
+
+<section anchor="introduction" title="Introduction">
+
+<t>The DNS Data Dictionary provides a common set of names and definitions for
+  data elements which may be used in a DNS related protocol.  The dictionary
+  is intended to be inclusive and not obligatory.  That is, the existence of
+  a data element in this dictionary does not imply the data element must be used
+  or recognized in any particular protocol. The items in this dictionary should
+  represent the union for what is in existing relevant protocols, and should
+  prevent divergence in new protocols. We also expect that each
+  application or protocol may have additional requirements specific to the
+  application or protocol. Such additional requirements should be
+  documented as part of the application or protocol specification.</t>
+
+<t>The data dictionary currently has thirty-one data elements.
+  These data elements include the DNS records, the detailed status of a
+  registration to the details for each of the contacts, and the account details
+  and payment history.  The proposed IANA registry lists standard data elements
+  and their syntax for inclusion in the files.</t>
+
+<t>We expect the DNS data dictionary to evolve to meet the needs of various
+  applications.  With the exception of correction of errors, we expect the
+  changes to the DNS Data Dictionary to be additions as opposed to deletions or
+  changes.</t>
+
+<t>[Comment: We are looking for additional authors and contributors to add to
+  and improve the data dictionary, keeping in line with the RFC Series Editor
+  statement on authorship. <eref target="https://www.rfc-editor.org/pipermail/rfc-interest/2015-May/008869.html"/>]</t>
+
+<section anchor="requirements-language" title="Requirements Language">
+
+<t>The key words "MUST", "MUST NOT", "REQUIRED", "SHALL", "SHALL NOT", "SHOULD",
+  "SHOULD NOT", "RECOMMENDED", "NOT RECOMMENDED", "MAY", and "OPTIONAL" in this
+  document are to be interpreted as described in BCP 14 <xref target="RFC2119"/>
+  <xref target="RFC8174"/> when, and only when, they appear in all capitals, as
+  shown here.</t>
+
+</section>
+</section>
+<section anchor="data-element-specification" title="Data Element Specification">
+
+<t>Each data element is a single unit of information that can be collected
+and compared during the registration process. The primary purposes of
+the IANA registry of data elements are to ensure that each data element
+is assigned a unique name and that the syntax of each data element is
+specified.</t>
+
+<t>Each data element is assigned to an element type to organize the
+taxonomy of the data dictionary.</t>
+
+<t>The name of the data element MUST be unique and this characteristic MUST
+be enforced by the registry. The character encoding recommendation for
+data elements is specified in Section 3.</t>
+
+<t>The subsections below comprise an initial list of known data elements
+commonly being used in the templates. The title of the subsection is the
+data element name for the data element. The combination of data element
+type and data element name MUST be unique and MUST be processed as case
+insensitive in the IANA registry.</t>
+
+<section anchor="element-name-domain-name" title="Element name: Domain Name">
+
+<t>This is the domain name in an EPP <xref target="RFC5731"/> domain object and
+it MUST be in A-Label format.</t>
+
+<t>See also "Domain name" in <xref target="RFC8499"/>.</t>
+
+</section>
+<section anchor="element-name-registry" title="Element name: Registry">
+
+<t>The name of the registry. This data element is text/string with no
+naming convention enforced.</t>
+
+<t>See also "Registry" in <xref target="RFC8499"/>.</t>
+
+</section>
+
+<section anchor="element-name-ns" title="Element name: NS">
+  <t>The authoritative name server for the domain.<xref target="RFC1034"/></t>
+  <t>See also "Authoritative server" in <xref target="RFC8499"/></t>
+</section>
+
+<section anchor="element-name-reg-creation-date" title="Element name: Registration Creation Date">
+  <t>The EPP status code (&lt;domain:crDate&gt;) for the domain registration creation date.<xref target="RFC5731"/></t>
+</section>
+
+<section anchor="element-name-reg-expiration-date" title="Element name: Registration Expiration Date">
+  <t>The EPP status code (&lt;domain:exDate&gt;) for the domain registration expiration date.<xref target="RFC5731"/></t>
+</section>
+
+<section anchor="element-name-reg-updated-date" title="Element name: Registration Updated Date">
+  <t>The EPP status code (&lt;domain:upDate&gt;) for the domain registration updated date.<xref target="RFC5731"/></t>
+
+</section>
+
+<section anchor="element-name-reg-transfer-date" title="Element name: Registration Transfer Date">
+  <t>The EPP status code (&lt;domain:trDate&gt;) for the domain registration transfer date.<xref target="RFC5731"/></t>
+</section>
+
+<section anchor="element-name-protection" title="Element name: Protection">
+  <t>The level of protection assigned to a domain registration.</t>
+</section>
+
+<section anchor="element-name-nexus" title="Element name: Nexus">
+
+<t>The country, community, or geographic location of the account holder.</t>
+
+</section>
+<section anchor="element-name-person" title="Element name: Person">
+
+<t>Indication that the rules regarding this registration apply as per the
+registrant being a legal person or a natural person.</t>
+
+</section>
+<section anchor="element-name-personal" title="Element name: Personal">
+
+</section>
+<section anchor="element-name-status-locks" title="Element name: Status &amp; Locks">
+
+<t>The EPP Status codes (ex: clientTransferProhibited) related to domain.<xref target="RFC5731"/></t>
+
+</section>
+<section anchor="element-name-source-method" title="Element name: Source &amp; Method">
+
+<t>The back pointer from registry to registrant.</t>
+
+</section>
+<section anchor="element-name-payment-history" title="Element name: Payment History">
+
+<t>Information related to the customer’s financial exchanges.</t>
+
+</section>
+<section anchor="element-name-transaction-history" title="Element name: Transaction History">
+
+<t>[Is this same as 2.4.2?]</t>
+
+</section>
+<section anchor="element-name-user-account-id" title="Element name: User Account ID">
+
+<t>This is a customer ID at the registrar, reseller, or privacy/proxy
+provider, respectively.</t>
+
+</section>
+<section anchor="element-name-reserved" title="Element name: Reserved">
+
+<t>[this field is an artifact of prior use which was determined to not be
+necessary, but the field was left intact for future use]</t>
+
+</section>
+<section anchor="element-name-name" title="Element name: Name">
+
+<t>Individual name is represented using character strings. These strings
+have a specified minimum length and a specified maximum length.
+Individual names MAY be provided in either UTF-8 <xref target="RFC3629"/> or a subset
+of UTF-8 that can be represented in 7-bit ASCII, depending on local
+needs.</t>
+
+</section>
+<section anchor="element-name-org" title="Element name: Org">
+
+<t>Organization name is represented using character strings. These strings
+have a specified minimum length and a specified maximum length.
+Organizational names MAY be provided in either UTF-8 <xref target="RFC3629"/> or a subset of UTF-8 that can be represented in 7-bit ASCII, depending on local needs.</t>
+
+</section>
+<section anchor="element-name-street" title="Element name: Street">
+
+<t>Postal street address, formatted as per <xref target="ISO19160-4"/>.</t>
+
+</section>
+<section anchor="element-name-city" title="Element name: City">
+
+<t>Postal city address, formatted as per <xref target="ISO19160-4"/>.</t>
+
+</section>
+<section anchor="element-name-stateprovince" title="Element name: State/Province">
+
+<t>Postal state or province address, formatted as per <xref target="ISO19160-4"/>.</t>
+
+</section>
+<section anchor="element-name-postal-code" title="Element name: Postal code">
+
+<t>Postal code, formatted as per <xref target="ISO19160-4"/>. Contact postal codes are
+represented using character strings. These strings have a specified
+minimum length and a specified maximum length.</t>
+
+</section>
+<section anchor="element-name-country" title="Element name: Country">
+
+<t>Country code identifier. Contact country identifiers are represented
+using two-character identifiers specified in <xref target="ISO3166-1"/>.</t>
+
+</section>
+<section anchor="element-name-phone" title="Element name: Phone">
+
+<t>Telephone number structure is derived from structures defined in
+<xref target="ITU.E164.2005"/>. Telephone numbers described in this mapping are
+character strings that MUST begin with a plus sign (“+”, ASCII value
+0x002B), followed by a country code defined in [ITU.E164.2005],
+followed by a dot (“.”, ASCII value 0x002E), followed by a sequence of
+digits representing the telephone number. An optional “x” attribute is
+provided to note telephone extension information.</t>
+
+</section>
+<section anchor="element-name-phone-ext" title="Element name: Phone ext">
+
+<t>This field is intended to represent an “extension” within the phone
+number to reach the specific person or role desk telephone, appropriate
+queue or mailbox after successfully dialing the Phone element.</t>
+
+</section>
+<section anchor="element-name-fax" title="Element name: Fax">
+
+<t>Fax telephone number structure is derived from structures defined in
+[ITU.E164.2005]. Telephone numbers described in this mapping are
+character strings that MUST begin with a plus sign (“+”, ASCII value
+0x002B), followed by a country code defined in <xref target="ITU.E164.2005"/>,
+followed by a dot (“.”, ASCII value 0x002E), followed by a sequence of
+digits representing the telephone number.</t>
+
+</section>
+<section anchor="element-name-fax-ext" title="Element name: Fax ext">
+
+<t>This field is an “extension” within a phone tree or PBX that is
+necessary to connect to a fax machine after successfully dialing the fax
+element.</t>
+
+</section>
+<section anchor="element-name-email" title="Element name: Email">
+  <t>Email address syntax is defined in <xref target="RFC5322"/>.</t>
+</section>
+
+<section anchor="element-name-emailorphone" title="Element name: Email_or_phone">
+  <t>There is a requirement that either the phone or email element have been
+    confirmed reachable, which this field is intended to represent.</t>
+</section>
+
+<section anchor="element-name-uniqueid" title="Element name: Registry UniqueID">
+  <t>This field represents server-unique identifiers assigned to entities, such
+    as clients and contacts. These identifiers are character strings that
+    typically have a specified minimum length, a specified maximum length, and a
+    specified format.</t>
+</section>
+
+</section>
+<section anchor="iana-considerations" title="IANA Considerations">
+
+<t>This section describes the format of the IANA Registration Report</t>
+
+<t>Registry, which has two tables described below, and the procedures</t>
+
+<t>used to populate and manage the registry entries.</t>
+
+<section anchor="report-specification" title="Report Specification">
+
+<t>This registry uses the “Specification Required” policy described in
+   <xref target="RFC8126"/>. An English language version of the extension
+   specification is required in the registry, though non-English versions of the
+   specification may also be provided.</t>
+
+<t>The “Specification Required” policy implies review by a “designated expert”.
+  Section 5.2 of RFC 8126 describes the role of designated experts and the
+  function they perform.</t>
+
+<section anchor="designated-expert-evaluation-criteria" title="Designated Expert
+  Evaluation Criteria">
+
+<t>A high-level description of the role of the designated expert is described in
+  Section 5.2 of RFC 8126. Specific guidelines for the appointment of designated
+  experts and the evaluation of a new data element is provided here.</t>
+
+<t>The IESG SHOULD appoint a small pool of individuals (perhaps 3 - 5) to serve
+  as designated experts, as described in Section 5.2 of RFC 8126. The pool
+  should have a single administrative chair who is appointed by the IESG. The
+  designated experts should use the existing regext mailing list
+  (regext@ietf.org) for public discussion of registration requests. This implies
+  that the mailing list should remain open after the work of the REGEXT working
+  group has concluded.</t>
+
+<t>The results of the evaluation should be shared via email with the registrant
+  and the regext mailing list. Issues discovered during the evaluation can be
+  corrected by the registrant, and those corrections can be submitted to the
+  designated experts until the designated experts explicitly decide to accept or
+  reject the registration request. The designated experts must make an explicit
+  decision and that decision must be shared via email with the registrant and
+  the regext mailing list. If the specification for a data element or report is
+  an IETF Standards Track document, no review is required by the designated
+  expert.</t>
+
+<t>Designated experts should be permissive in their evaluation of requests for
+  data elements and reports that have been implemented and deployed by at least
+  one registry. This implies that it may indeed be possible to register multiple
+  data elements or reports that provide the same functionality. Requests to
+  register data elements or reports that have not been deployed should be
+  evaluated with a goal of reducing duplication. A potential registrant who
+  submits a request to register a new data element or report that includes
+  similar functionality to existing data elements or reports should be made
+  aware of the existing data elements and reports. The registrant should be
+  asked to reconsider their request given the existence of similar data elements
+  or reports. Should they decline to do so, perceived similarity should not be a
+  sufficient reason for rejection as long as all other requirements are met.</t>
+
+</section>
+<section anchor="registration-procedure" title="Registration Procedure">
+
+<t>The registry contains information describing each registered data element or
+  report. Registry entries are created and managed by sending forms to IANA that
+  describe the data element or report for the registry entry.</t>
+
+<section anchor="required-information" title="Required Information">
+
+<t>The required information must be formatted consistently using the following
+  registration form. Form field names and values may appear on the same line.</t>
+
+<section anchor="data-element-definition" title="Data Element Definition">
+
+<t>Name of data element type</t>
+
+<t>
+    MUST be unique within the registry, enforced to be unique, and MUST be
+    processed as case insensitive
+</t>
+
+<t>Name of data element</t>
+
+<t>
+    MUST be unique within the registry, enforced to be unique, and MUST be
+    processed as case insensitive
+</t>
+
+<t>Reference document</t>
+
+<t>
+    MUST define the data element, SHOULD be a URL to a RFC, and SHOULD include
+    the section number (or other detailed internal document reference), MAY be a
+    URL to any document available under equivalent terms
+</t>
+
+<t>Registrant</t>
+
+<t>
+    Will be IESG for initial entries and all Standards Track specifications;
+    otherwise as specified by the registran
+</t>
+
+<t>Status</t>
+
+<t>
+    MUST be one of active, inactive, or unknown
+</t>
+
+</section>
+</section>
+<section anchor="registration-processing" title="Registration Processing">
+
+<t>Registrants should send each registration form to IANA with a single record
+  for incorporation into the registry. Send the form via email to iana@iana.org
+  or complete the online form found on the IANA web site. The subject line
+  should indicate whether the enclosed form represents an insertion of a new
+  record (indicated by the word “INSERT” in the subject line) or a replacement
+  of an existing record (indicated by the word “MODIFY” in the subject line). At
+  no time can a record be deleted from the registry. On receipt of the
+  registration request, IANA will initiate review by the designated expert(s) if
+  appropriate, who will evaluate the request using the criteria in Section 3.1.1
+  in consultation with the regext mailing list.</t>
+
+</section>
+<section anchor="updating-report-definition-registry-entries" title="Updating
+  Report Definition Registry Entries">
+
+<t>When submitting changes to existing registry entries, include text in the
+  “Notes” field of the registration form describing the change. Under normal
+  circumstances, registry entries are only to be updated by the registrant. If
+  the registrant becomes unavailable or otherwise unresponsive, the designated
+  expert can submit a registration form to IANA to update the registrant
+  information. Entries can change state from “Active” to “Inactive” and back
+  again as long as state-change requests conform to the processing requirements
+  identified in this document. In addition to entries that become “Inactive” due
+  to a lack of implementation, entries for which a specification becomes
+  consistently unavailable over time should be marked “Inactive” by the
+  designated expert until the specification again becomes reliably available.</t>
+
+</section>
+</section>
+</section>
+<section anchor="initial-assignments" title="Initial assignments">
+
+<section anchor="data-element-definition-in-iana-registry" title="Data Element
+  Definition in IANA Registry">
+
+<t>—- BEGIN FORM —-</t>
+
+<t>Name of data element:</t>
+
+<t>Domain Name</t>
+
+<t>Reference:</t>
+
+<t>This RFC Section 2.1.</t>
+
+<t>Registrant:</t>
+
+<t>IESG, iesg@ietf.org</t>
+
+<t>Status:</t>
+
+<t>Active</t>
+
+<t>—- END FORM —-</t>
+
+<t>—- BEGIN FORM —-</t>
+
+<t>Name of data element:</t>
+
+<t>…………</t>
+
+<t>Reference:</t>
+
+<t>This RFC Section $2.n</t>
+
+<t>Registrant:</t>
+
+<t>IESG, iesg@ietf.org</t>
+
+<t>Status:</t>
+
+<t>Active</t>
+
+<t>—- END FORM —-</t>
+
+</section>
+</section>
+</section>
+<section anchor="security-considerations" title="Security Considerations">
+
+<t>This specification does not consider the issues of distribution or access to
+  the reports that are created and thus does not introduce any new security
+  oncerns that are not already present in the local environment in which the
+  report is created.</t>
+
+<t>A security principle to keep in mind as new reports are developed is that it
+  is considered a bad practice to report or disclose security information. In
+  the case of the registration system upon which this reporting mechanism is
+  based, the authInfo code is a specific example of a data element that SHOULD
+  NOT be included in a report.</t>
+
+</section>
+<section anchor="privacy-considerations" title="Privacy Considerations">
+
+<t>This specification defines a mechanism for policy comparison based on data in
+  a registration system. Some of that data is likely to be considered personally
+  identifiable information (PII) and thus would be subject to privacy protection
+  according to an applicable privacy regulation. It is outside the scope of this
+  specification to address those specific concerns. Implementors are urged to
+  consider these issues with their local legal authority and develop appropriate
+  requirements for their work.</t>
+
+</section>
+<section anchor="internationalization-considerations" title="Internationalization Considerations">
+
+<t>The character encoding for the file contents MUST use UTF-8. Throughout this
+  document A-LABEL is indicated as a SHOULD and that MUST be interpreted as
+  follows. All domain name labels MUST be in A-LABEL format if it is possible to
+  represent it as an A-LABEL, otherwise U-LABEL MAY be used.</t>
+
+</section>
+
+<section anchor="acknowledgements" title="Acknowledgements">
+
+<t>With many thanks to James Galvin and Rod Rasmussen for their advice and
+  feedback on this data dictionary.</t>
+
+</section>
+
+</middle>
+
+<back>
+<references title="Normative References">
+
+&RFC1034;
+&RFC2119;
+&RFC3629;
+&RFC5322;
+&RFC5731;
+&RFC8126;
+&RFC8174;
+&RFC8499;
+
+<reference anchor="ISO3166-1" >
+  <front>
+    <title>ISO3166-1: Codes for the representation of names of countries and
+      their subdivisions -- Part1: Country codes</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+    </author>
+    <date month="November" year="2006"/>
+  </front>
+</reference>
+
+<reference anchor="ISO19160-4" >
+  <front>
+    <title>ISO19160-4: Addressing — Part 4: International postal address
+      components and template language</title>
+    <author>
+      <organization>International Organization for Standardization</organization>
+    </author>
+    <date month="November" year="2017"/>
+  </front>
+</reference>
+
+<reference anchor="ITU.E164.2005" >
+  <front>
+    <title>ITU-T Recommendation E.164: The international public telecommunication numbering plan</title>
+    <author>
+      <organization>International Telecommunication Union</organization>
+    </author>
+    <date month="February" year="2005"/>
+  </front>
+</reference>
+
+
+
+</references>
+
+
+</back>
+</rfc>
