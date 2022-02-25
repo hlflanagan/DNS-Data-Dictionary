@@ -5,21 +5,23 @@
 Network Working Group                                   H. Flanagan, Ed.
 Internet-Draft                                                S. Crocker
 Intended status: Standards Track             Edgemoor Research Institute
-Expires: July 21, 2022                                  January 17, 2022
+Expires: August 29, 2022                               February 25, 2022
 
 
-                          DNS Data Dictionary
-                  draft-ietf-regext-datadictionary-00
+                      Registration Data Dictionary
+                  draft-ietf-regext-datadictionary-01
 
 Abstract
 
-   Multiple applications related to the domain name system are built
-   around a list of data elements.  There is currently no unified public
-   list of these data elements, nor is there an organized and
-   independent change control process.  This document codifies the
-   multiple similar but not quite identical lists of data elements into
-   a neutral DNS Data Dictionary to be maintained as an independent IANA
-   Registry.
+   Multiple applications related to the registration of names and other
+   identifiers are built around a list of data elements.  There is
+   currently no unified public list of these data elements, nor is there
+   an organized and independent change control process.  This document
+   codifies the multiple similar but not quite identical lists of data
+   elements into a neutral Data Dictionary to be maintained as an
+   independent IANA Registry.  The Data Dictionary defines data elements
+   but does not specify which ones are to be used in any particular
+   application; the Data Dictionary is policy-neutral.
 
 Status of This Memo
 
@@ -36,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on July 21, 2022.
+   This Internet-Draft will expire on August 29, 2022.
 
 Copyright Notice
 
@@ -48,16 +50,16 @@ Copyright Notice
    (https://trustee.ietf.org/license-info) in effect on the date of
    publication of this document.  Please review these documents
    carefully, as they describe your rights and restrictions with respect
+
+
+
+Flanagan & Crocker       Expires August 29, 2022                [Page 1]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
    to this document.  Code Components extracted from this document must
    include Simplified BSD License text as described in Section 4.e of
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                 [Page 1]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
-
    the Trust Legal Provisions and are provided without warranty as
    described in the Simplified BSD License.
 
@@ -65,12 +67,12 @@ Table of Contents
 
    1.  Introduction  . . . . . . . . . . . . . . . . . . . . . . . .   3
      1.1.  Requirements Language . . . . . . . . . . . . . . . . . .   3
-   2.  Data Element Specification  . . . . . . . . . . . . . . . . .   3
+   2.  Data Element Specification  . . . . . . . . . . . . . . . . .   4
      2.1.  Element name: Domain Name . . . . . . . . . . . . . . . .   4
      2.2.  Element name: Registry  . . . . . . . . . . . . . . . . .   4
      2.3.  Element name: NS  . . . . . . . . . . . . . . . . . . . .   4
-     2.4.  Element name: Registration Creation Date  . . . . . . . .   4
-     2.5.  Element name: Registration Expiration Date  . . . . . . .   4
+     2.4.  Element name: Registration Creation Date  . . . . . . . .   5
+     2.5.  Element name: Registration Expiration Date  . . . . . . .   5
      2.6.  Element name: Registration Updated Date . . . . . . . . .   5
      2.7.  Element name: Registration Transfer Date  . . . . . . . .   5
      2.8.  Element name: Protection  . . . . . . . . . . . . . . . .   5
@@ -78,45 +80,45 @@ Table of Contents
      2.10. Element name: Person  . . . . . . . . . . . . . . . . . .   5
      2.11. Element name: Personal  . . . . . . . . . . . . . . . . .   5
      2.12. Element name: Status & Locks  . . . . . . . . . . . . . .   5
-     2.13. Element name: Source & Method . . . . . . . . . . . . . .   5
-     2.14. Element name: Payment History . . . . . . . . . . . . . .   5
-     2.15. Element name: Transaction History . . . . . . . . . . . .   5
-     2.16. Element name: User Account ID . . . . . . . . . . . . . .   5
+     2.13. Element name: Source & Method . . . . . . . . . . . . . .   6
+     2.14. Element name: Payment History . . . . . . . . . . . . . .   6
+     2.15. Element name: Transaction History . . . . . . . . . . . .   6
+     2.16. Element name: User Account ID . . . . . . . . . . . . . .   6
      2.17. Element name: Reserved  . . . . . . . . . . . . . . . . .   6
      2.18. Element name: Name  . . . . . . . . . . . . . . . . . . .   6
      2.19. Element name: Org . . . . . . . . . . . . . . . . . . . .   6
      2.20. Element name: Street  . . . . . . . . . . . . . . . . . .   6
      2.21. Element name: City  . . . . . . . . . . . . . . . . . . .   6
-     2.22. Element name: State/Province  . . . . . . . . . . . . . .   6
-     2.23. Element name: Postal code . . . . . . . . . . . . . . . .   6
-     2.24. Element name: Country . . . . . . . . . . . . . . . . . .   6
+     2.22. Element name: State/Province  . . . . . . . . . . . . . .   7
+     2.23. Element name: Postal code . . . . . . . . . . . . . . . .   7
+     2.24. Element name: Country . . . . . . . . . . . . . . . . . .   7
      2.25. Element name: Phone . . . . . . . . . . . . . . . . . . .   7
      2.26. Element name: Phone ext . . . . . . . . . . . . . . . . .   7
      2.27. Element name: Fax . . . . . . . . . . . . . . . . . . . .   7
      2.28. Element name: Fax ext . . . . . . . . . . . . . . . . . .   7
-     2.29. Element name: Email . . . . . . . . . . . . . . . . . . .   7
-     2.30. Element name: Email_or_phone  . . . . . . . . . . . . . .   7
-     2.31. Element name: Registry UniqueID . . . . . . . . . . . . .   7
+     2.29. Element name: Email . . . . . . . . . . . . . . . . . . .   8
+     2.30. Element name: Email_or_phone  . . . . . . . . . . . . . .   8
+     2.31. Element name: Registry UniqueID . . . . . . . . . . . . .   8
    3.  IANA Considerations . . . . . . . . . . . . . . . . . . . . .   8
      3.1.  Report Specification  . . . . . . . . . . . . . . . . . .   8
        3.1.1.  Designated Expert   Evaluation Criteria . . . . . . .   8
        3.1.2.  Registration Procedure  . . . . . . . . . . . . . . .   9
-     3.2.  Initial assignments . . . . . . . . . . . . . . . . . . .  10
-       3.2.1.  Data Element   Definition in IANA Registry  . . . . .  10
-   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  11
-   5.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  11
-   6.  Internationalization Considerations . . . . . . . . . . . . .  12
+     3.2.  Initial assignments . . . . . . . . . . . . . . . . . . .  11
+       3.2.1.  Data Element   Definition in IANA Registry  . . . . .  11
+   4.  Security Considerations . . . . . . . . . . . . . . . . . . .  12
 
 
 
-Flanagan & Crocker        Expires July 21, 2022                 [Page 2]
+Flanagan & Crocker       Expires August 29, 2022                [Page 2]
 
-Internet-Draft             DNS Data Dictionary              January 2022
+Internet-Draft        Registration Data Dictionary         February 2022
 
 
+   5.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  12
+   6.  Internationalization Considerations . . . . . . . . . . . . .  12
    7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  12
    8.  Normative References  . . . . . . . . . . . . . . . . . . . .  12
-   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  13
+   Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  14
 
 1.  Introduction
 
@@ -156,20 +158,23 @@ Internet-Draft             DNS Data Dictionary              January 2022
    14 [RFC2119] [RFC8174] when, and only when, they appear in all
    capitals, as shown here.
 
+
+
+
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022                [Page 3]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
 2.  Data Element Specification
 
    Each data element is a single unit of information that can be
    collected and compared during the registration process.  The primary
    purposes of the IANA registry of data elements are to ensure that
-
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                 [Page 3]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
-
    each data element is assigned a unique name and that the syntax of
    each data element is specified.
 
@@ -185,6 +190,12 @@ Internet-Draft             DNS Data Dictionary              January 2022
    the data element name for the data element.  The combination of data
    element type and data element name MUST be unique and MUST be
    processed as case insensitive in the IANA registry.
+
+   Note that the legal definition of any of the terms used in the data
+   dictionary, such as 'personally identfiable information' or 'legal
+   person', are to be determined locally.  The organization using this
+   dictionary will record their interpretation in the appropriate
+   element.
 
 2.1.  Element name: Domain Name
 
@@ -206,6 +217,15 @@ Internet-Draft             DNS Data Dictionary              January 2022
 
    See also "Authoritative server" in [RFC8499]
 
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022                [Page 4]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
 2.4.  Element name: Registration Creation Date
 
    The EPP status code (<domain:crDate>) for the domain registration
@@ -215,16 +235,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
 
    The EPP status code (<domain:exDate>) for the domain registration
    expiration date.[RFC5731]
-
-
-
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                 [Page 4]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
 
 2.6.  Element name: Registration Updated Date
 
@@ -253,8 +263,24 @@ Internet-Draft             DNS Data Dictionary              January 2022
 
 2.12.  Element name: Status & Locks
 
-   The EPP Status codes (ex: clientTransferProhibited) related to
-   domain.[RFC5731]
+   Examples include the EPP (Section 2.3 of [RFC5731]) and RDAP
+   (Section 10.2.2 of [RFC9083]) codes (ex: clientTransferProhibited)
+   that describe the current state of a registered domain name and the
+   protocol actions that can (or cannot) be performed on the domain
+   name.  A registered domain name MAY be associated with multiple
+   status values.  Other managed objects, including name server and
+   contact objects, can also have status and lock values.
+
+
+
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022                [Page 5]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
 
 2.13.  Element name: Source & Method
 
@@ -272,15 +298,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
 
    This is a customer ID at the registrar, reseller, or privacy/proxy
    provider, respectively.
-
-
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                 [Page 5]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
 
 2.17.  Element name: Reserved
 
@@ -311,6 +328,16 @@ Internet-Draft             DNS Data Dictionary              January 2022
 
    Postal city address, formatted as per [ISO19160-4].
 
+
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022                [Page 6]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
 2.22.  Element name: State/Province
 
    Postal state or province address, formatted as per [ISO19160-4].
@@ -325,18 +352,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
 
    Country code identifier.  Contact country identifiers are represented
    using two-character identifiers specified in [ISO3166-1].
-
-
-
-
-
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                 [Page 6]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
 
 2.25.  Element name: Phone
 
@@ -370,6 +385,15 @@ Internet-Draft             DNS Data Dictionary              January 2022
    necessary to connect to a fax machine after successfully dialing the
    fax element.
 
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022                [Page 7]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
 2.29.  Element name: Email
 
    Email address syntax is defined in [RFC5322].
@@ -385,14 +409,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
    such as clients and contacts.  These identifiers are character
    strings that typically have a specified minimum length, a specified
    maximum length, and a specified format.
-
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                 [Page 7]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
 
 3.  IANA Considerations
 
@@ -425,6 +441,15 @@ Internet-Draft             DNS Data Dictionary              January 2022
    8126.  The pool should have a single administrative chair who is
    appointed by the IESG.  The designated experts should use the
    existing regext mailing list (regext@ietf.org) for public discussion
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022                [Page 8]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
    of registration requests.  This implies that the mailing list should
    remain open after the work of the REGEXT working group has concluded.
 
@@ -442,14 +467,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
    Designated experts should be permissive in their evaluation of
    requests for data elements and reports that have been implemented and
    deployed by at least one registry.  This implies that it may indeed
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                 [Page 8]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
-
    be possible to register multiple data elements or reports that
    provide the same functionality.  Requests to register data elements
    or reports that have not been deployed should be evaluated with a
@@ -482,6 +499,13 @@ Internet-Draft             DNS Data Dictionary              January 2022
    MUST be unique within the registry, enforced to be unique, and MUST
    be processed as case insensitive
 
+
+
+Flanagan & Crocker       Expires August 29, 2022                [Page 9]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
    Name of data element
 
    MUST be unique within the registry, enforced to be unique, and MUST
@@ -498,13 +522,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
 
    Will be IESG for initial entries and all Standards Track
    specifications; otherwise as specified by the registran
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                 [Page 9]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
 
    Status
 
@@ -537,6 +554,14 @@ Internet-Draft             DNS Data Dictionary              January 2022
    as long as state-change requests conform to the processing
    requirements identified in this document.  In addition to entries
    that become "Inactive" due to a lack of implementation, entries for
+
+
+
+Flanagan & Crocker       Expires August 29, 2022               [Page 10]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
    which a specification becomes consistently unavailable over time
    should be marked "Inactive" by the designated expert until the
    specification again becomes reliably available.
@@ -554,13 +579,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
    Reference:
 
    This RFC Section 2.1.
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                [Page 10]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
 
    Registrant:
 
@@ -592,6 +610,14 @@ Internet-Draft             DNS Data Dictionary              January 2022
 
    --- END FORM ---
 
+
+
+
+Flanagan & Crocker       Expires August 29, 2022               [Page 11]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
 4.  Security Considerations
 
    This specification does not consider the issues of distribution or
@@ -610,14 +636,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
    This specification defines a mechanism for policy comparison based on
    data in a registration system.  Some of that data is likely to be
    considered personally identifiable information (PII) and thus would
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                [Page 11]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
-
    be subject to privacy protection according to an applicable privacy
    regulation.  It is outside the scope of this specification to address
    those specific concerns.  Implementors are urged to consider these
@@ -644,6 +662,18 @@ Internet-Draft             DNS Data Dictionary              January 2022
               "ISO19160-4: Addressing -- Part 4: International postal
               address components and template language", November 2017.
 
+
+
+
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022               [Page 12]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
    [ISO3166-1]
               International Organization for Standardization,
               "ISO3166-1: Codes for the representation of names of
@@ -663,16 +693,6 @@ Internet-Draft             DNS Data Dictionary              January 2022
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
               <https://www.rfc-editor.org/info/rfc2119>.
-
-
-
-
-
-
-Flanagan & Crocker        Expires July 21, 2022                [Page 12]
-
-Internet-Draft             DNS Data Dictionary              January 2022
-
 
    [RFC3629]  Yergeau, F., "UTF-8, a transformation format of ISO
               10646", STD 63, RFC 3629, DOI 10.17487/RFC3629, November
@@ -700,6 +720,21 @@ Internet-Draft             DNS Data Dictionary              January 2022
               Terminology", BCP 219, RFC 8499, DOI 10.17487/RFC8499,
               January 2019, <https://www.rfc-editor.org/info/rfc8499>.
 
+
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022               [Page 13]
+
+Internet-Draft        Registration Data Dictionary         February 2022
+
+
+   [RFC9083]  Hollenbeck, S. and A. Newton, "JSON Responses for the
+              Registration Data Access Protocol (RDAP)", STD 95,
+              RFC 9083, DOI 10.17487/RFC9083, June 2021,
+              <https://www.rfc-editor.org/info/rfc9083>.
+
 Authors' Addresses
 
    Heather Flanagan (editor)
@@ -725,4 +760,25 @@ Authors' Addresses
 
 
 
-Flanagan & Crocker        Expires July 21, 2022                [Page 13]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Flanagan & Crocker       Expires August 29, 2022               [Page 14]
