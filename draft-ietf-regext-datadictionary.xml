@@ -140,7 +140,7 @@ type and data element name MUST be unique and MUST be processed as case
 insensitive in the IANA registry.</t>
 
 <t>Note that the legal definition of any of the terms used in the data
-  dictionary, such as ‘personally identfiable information’ or ‘legal person’,
+  dictionary, such as ‘personally identifiable information’ or ‘legal person’,
   are to be determined locally. The organization using this dictionary will
   record their interpretation in the appropriate element.</t>
 
