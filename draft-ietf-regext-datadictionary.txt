@@ -88,14 +88,14 @@ Table of Contents
      2.18. Element name: Name  . . . . . . . . . . . . . . . . . . .   6
      2.19. Element name: Org . . . . . . . . . . . . . . . . . . . .   6
      2.20. Element name: Street  . . . . . . . . . . . . . . . . . .   6
-     2.21. Element name: City  . . . . . . . . . . . . . . . . . . .   6
+     2.21. Element name: City  . . . . . . . . . . . . . . . . . . .   7
      2.22. Element name: State/Province  . . . . . . . . . . . . . .   7
      2.23. Element name: Postal code . . . . . . . . . . . . . . . .   7
      2.24. Element name: Country . . . . . . . . . . . . . . . . . .   7
      2.25. Element name: Phone . . . . . . . . . . . . . . . . . . .   7
      2.26. Element name: Phone ext . . . . . . . . . . . . . . . . .   7
      2.27. Element name: Fax . . . . . . . . . . . . . . . . . . . .   7
-     2.28. Element name: Fax ext . . . . . . . . . . . . . . . . . .   7
+     2.28. Element name: Fax ext . . . . . . . . . . . . . . . . . .   8
      2.29. Element name: Email . . . . . . . . . . . . . . . . . . .   8
      2.30. Element name: Email_or_phone  . . . . . . . . . . . . . .   8
      2.31. Element name: Registry UniqueID . . . . . . . . . . . . .   8
@@ -116,8 +116,11 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
    5.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  12
    6.  Internationalization Considerations . . . . . . . . . . . . .  12
-   7.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  12
-   8.  Normative References  . . . . . . . . . . . . . . . . . . . .  12
+   7.  Draft Change Log  . . . . . . . . . . . . . . . . . . . . . .  12
+   8.  Acknowledgements  . . . . . . . . . . . . . . . . . . . . . .  13
+   9.  References  . . . . . . . . . . . . . . . . . . . . . . . . .  13
+     9.1.  Informative References  . . . . . . . . . . . . . . . . .  13
+     9.2.  Normative References  . . . . . . . . . . . . . . . . . .  13
    Authors' Addresses  . . . . . . . . . . . . . . . . . . . . . . .  14
 
 1.  Introduction
@@ -162,9 +165,6 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 
 
-
-
-
 Flanagan & Crocker      Expires September 8, 2022               [Page 3]
 
 Internet-Draft        Registration Data Dictionary            March 2022
@@ -199,8 +199,9 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 2.1.  Element name: Domain Name
 
-   This is the domain name in an EPP [RFC5731] domain object and it MUST
-   be in A-Label format.
+   This is the domain name as formatted according to the
+   Internationalized Domain Names for Applications (IDNA)
+   specification.[RFC5890]
 
    See also "Domain name" in [RFC8499].
 
@@ -220,7 +221,6 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 
 
-
 Flanagan & Crocker      Expires September 8, 2022               [Page 4]
 
 Internet-Draft        Registration Data Dictionary            March 2022
@@ -228,38 +228,42 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 2.4.  Element name: Registration Creation Date
 
-   The EPP status code (<domain:crDate>) for the domain registration
-   creation date.[RFC5731]
+   The the date and time of domain object creation.  Format TBD.
 
 2.5.  Element name: Registration Expiration Date
 
-   The EPP status code (<domain:exDate>) for the domain registration
-   expiration date.[RFC5731]
+   The date and time identifying the end of the domain object's
+   registration period.  Format TBD.
 
 2.6.  Element name: Registration Updated Date
 
-   The EPP status code (<domain:upDate>) for the domain registration
-   updated date.[RFC5731]
+   The date and time of the most recent domain-object modification.
+   Format TBD.
 
 2.7.  Element name: Registration Transfer Date
 
-   The EPP status code (<domain:trDate>) for the domain registration
-   transfer date.[RFC5731]
+   The date and time of the most recent successful domain-object
+   transfer.  Format TBD.
 
 2.8.  Element name: Protection
 
-   The level of protection assigned to a domain registration.
+   Defintion is TBD.  It could include the level of protection assigned
+   to a domain registration.
 
 2.9.  Element name: Nexus
 
-   The country, community, or geographic location of the account holder.
+   Defintion is TBD.  It could include the country, community, or
+   geographic location of the account holder.
 
 2.10.  Element name: Person
 
-   Indication that the rules regarding this registration apply as per
-   the registrant being a legal person or a natural person.
+   Defintion is TBD.  It could include indication that the rules
+   regarding this registration apply as per the registrant being a legal
+   person or a natural person.
 
 2.11.  Element name: Personal
+
+   Definition is TBD.
 
 2.12.  Element name: Status & Locks
 
@@ -273,10 +277,6 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 
 
-
-
-
-
 Flanagan & Crocker      Expires September 8, 2022               [Page 5]
 
 Internet-Draft        Registration Data Dictionary            March 2022
@@ -284,20 +284,22 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 2.13.  Element name: Source & Method
 
-   The back pointer from registry to registrant.
+   Definition is TBD.  It could include the back pointer from registry
+   to registrant.
 
 2.14.  Element name: Payment History
 
-   Information related to the customer's financial exchanges.
+   Definition is TBD.  It could include information related to the
+   customer's financial exchanges.
 
 2.15.  Element name: Transaction History
 
-   [Is this same as 2.4.2?]
+   Definition is TBD.
 
 2.16.  Element name: User Account ID
 
-   This is a customer ID at the registrar, reseller, or privacy/proxy
-   provider, respectively.
+   Definition is TBD.  It could include a customer ID at the registrar,
+   reseller, or privacy/proxy provider, respectively.
 
 2.17.  Element name: Reserved
 
@@ -324,9 +326,7 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
    Postal street address, formatted as per [ISO19160-4].
 
-2.21.  Element name: City
 
-   Postal city address, formatted as per [ISO19160-4].
 
 
 
@@ -337,6 +337,10 @@ Flanagan & Crocker      Expires September 8, 2022               [Page 6]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
+
+2.21.  Element name: City
+
+   Postal city address, formatted as per [ISO19160-4].
 
 2.22.  Element name: State/Province
 
@@ -379,11 +383,7 @@ Internet-Draft        Registration Data Dictionary            March 2022
    followed by a dot (".", ASCII value 0x002E), followed by a sequence
    of digits representing the telephone number.
 
-2.28.  Element name: Fax ext
 
-   This field is an "extension" within a phone tree or PBX that is
-   necessary to connect to a fax machine after successfully dialing the
-   fax element.
 
 
 
@@ -393,6 +393,12 @@ Flanagan & Crocker      Expires September 8, 2022               [Page 7]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
+
+2.28.  Element name: Fax ext
+
+   This field is an "extension" within a phone tree or PBX that is
+   necessary to connect to a fax machine after successfully dialing the
+   fax element.
 
 2.29.  Element name: Email
 
@@ -436,12 +442,6 @@ Internet-Draft        Registration Data Dictionary            March 2022
    appointment of designated experts and the evaluation of a new data
    element is provided here.
 
-   The IESG SHOULD appoint a small pool of individuals (perhaps 3 - 5)
-   to serve as designated experts, as described in Section 5.2 of RFC
-   8126.  The pool should have a single administrative chair who is
-   appointed by the IESG.  The designated experts should use the
-   existing regext mailing list (regext@ietf.org) for public discussion
-
 
 
 
@@ -450,6 +450,11 @@ Flanagan & Crocker      Expires September 8, 2022               [Page 8]
 Internet-Draft        Registration Data Dictionary            March 2022
 
 
+   The IESG SHOULD appoint a small pool of individuals (perhaps 3 - 5)
+   to serve as designated experts, as described in Section 5.2 of RFC
+   8126.  The pool should have a single administrative chair who is
+   appointed by the IESG.  The designated experts should use the
+   existing regext mailing list (regext@ietf.org) for public discussion
    of registration requests.  This implies that the mailing list should
    remain open after the work of the REGEXT working group has concluded.
 
@@ -492,12 +497,7 @@ Internet-Draft        Registration Data Dictionary            March 2022
    following registration form.  Form field names and values may appear
    on the same line.
 
-3.1.2.1.1.  Data Element Definition
 
-   Name of data element type
-
-   MUST be unique within the registry, enforced to be unique, and MUST
-   be processed as case insensitive
 
 
 
@@ -505,6 +505,13 @@ Flanagan & Crocker      Expires September 8, 2022               [Page 9]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
+
+3.1.2.1.1.  Data Element Definition
+
+   Name of data element type
+
+   MUST be unique within the registry, enforced to be unique, and MUST
+   be processed as case insensitive
 
    Name of data element
 
@@ -547,13 +554,6 @@ Internet-Draft        Registration Data Dictionary            March 2022
    When submitting changes to existing registry entries, include text in
    the "Notes" field of the registration form describing the change.
    Under normal circumstances, registry entries are only to be updated
-   by the registrant.  If the registrant becomes unavailable or
-   otherwise unresponsive, the designated expert can submit a
-   registration form to IANA to update the registrant information.
-   Entries can change state from "Active" to "Inactive" and back again
-   as long as state-change requests conform to the processing
-   requirements identified in this document.  In addition to entries
-   that become "Inactive" due to a lack of implementation, entries for
 
 
 
@@ -562,6 +562,13 @@ Flanagan & Crocker      Expires September 8, 2022              [Page 10]
 Internet-Draft        Registration Data Dictionary            March 2022
 
 
+   by the registrant.  If the registrant becomes unavailable or
+   otherwise unresponsive, the designated expert can submit a
+   registration form to IANA to update the registrant information.
+   Entries can change state from "Active" to "Inactive" and back again
+   as long as state-change requests conform to the processing
+   requirements identified in this document.  In addition to entries
+   that become "Inactive" due to a lack of implementation, entries for
    which a specification becomes consistently unavailable over time
    should be marked "Inactive" by the designated expert until the
    specification again becomes reliably available.
@@ -604,19 +611,18 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
    IESG, iesg@ietf.org
 
-   Status:
-
-   Active
-
-   --- END FORM ---
-
-
 
 
 Flanagan & Crocker      Expires September 8, 2022              [Page 11]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
+
+   Status:
+
+   Active
+
+   --- END FORM ---
 
 4.  Security Considerations
 
@@ -650,22 +656,16 @@ Internet-Draft        Registration Data Dictionary            March 2022
    A-LABEL format if it is possible to represent it as an A-LABEL,
    otherwise U-LABEL MAY be used.
 
-7.  Acknowledgements
+7.  Draft Change Log
 
-   With many thanks to James Galvin and Rod Rasmussen for their advice
-   and feedback on this data dictionary.
+   -01: Updated abstract to clarify that this draft does not intend to
+   set policy.
 
-8.  Normative References
+   -01: Updated definitions in 2.1, 2.4, 2.5, 2.6, 2.7 to remove
+   normative reference to the EPP spec.
 
-   [ISO19160-4]
-              International Organization for Standardization,
-              "ISO19160-4: Addressing -- Part 4: International postal
-              address components and template language", November 2017.
-
-
-
-
-
+   -01: Updated 2.  Data Element specification to note local
+   interpretation expected for any legal definitions.
 
 
 
@@ -673,6 +673,40 @@ Flanagan & Crocker      Expires September 8, 2022              [Page 12]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
+
+   -01: Added TBD to all data-related elements wrt format.
+
+   -01: Moved several items from informative to normative references.
+
+8.  Acknowledgements
+
+   With many thanks to James Galvin and Rod Rasmussen for their advice
+   and feedback on this data dictionary.
+
+9.  References
+
+9.1.  Informative References
+
+   [RFC5731]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
+              Domain Name Mapping", STD 69, RFC 5731,
+              DOI 10.17487/RFC5731, August 2009,
+              <https://www.rfc-editor.org/info/rfc5731>.
+
+   [RFC8499]  Hoffman, P., Sullivan, A., and K. Fujiwara, "DNS
+              Terminology", BCP 219, RFC 8499, DOI 10.17487/RFC8499,
+              January 2019, <https://www.rfc-editor.org/info/rfc8499>.
+
+   [RFC9083]  Hollenbeck, S. and A. Newton, "JSON Responses for the
+              Registration Data Access Protocol (RDAP)", STD 95,
+              RFC 9083, DOI 10.17487/RFC9083, June 2021,
+              <https://www.rfc-editor.org/info/rfc9083>.
+
+9.2.  Normative References
+
+   [ISO19160-4]
+              International Organization for Standardization,
+              "ISO19160-4: Addressing -- Part 4: International postal
+              address components and template language", November 2017.
 
    [ISO3166-1]
               International Organization for Standardization,
@@ -689,6 +723,13 @@ Internet-Draft        Registration Data Dictionary            March 2022
               STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987,
               <https://www.rfc-editor.org/info/rfc1034>.
 
+
+
+Flanagan & Crocker      Expires September 8, 2022              [Page 13]
+
+Internet-Draft        Registration Data Dictionary            March 2022
+
+
    [RFC2119]  Bradner, S., "Key words for use in RFCs to Indicate
               Requirement Levels", BCP 14, RFC 2119,
               DOI 10.17487/RFC2119, March 1997,
@@ -702,10 +743,10 @@ Internet-Draft        Registration Data Dictionary            March 2022
               DOI 10.17487/RFC5322, October 2008,
               <https://www.rfc-editor.org/info/rfc5322>.
 
-   [RFC5731]  Hollenbeck, S., "Extensible Provisioning Protocol (EPP)
-              Domain Name Mapping", STD 69, RFC 5731,
-              DOI 10.17487/RFC5731, August 2009,
-              <https://www.rfc-editor.org/info/rfc5731>.
+   [RFC5890]  Klensin, J., "Internationalized Domain Names for
+              Applications (IDNA): Definitions and Document Framework",
+              RFC 5890, DOI 10.17487/RFC5890, August 2010,
+              <https://www.rfc-editor.org/info/rfc5890>.
 
    [RFC8126]  Cotton, M., Leiba, B., and T. Narten, "Guidelines for
               Writing an IANA Considerations Section in RFCs", BCP 26,
@@ -715,25 +756,6 @@ Internet-Draft        Registration Data Dictionary            March 2022
    [RFC8174]  Leiba, B., "Ambiguity of Uppercase vs Lowercase in RFC
               2119 Key Words", BCP 14, RFC 8174, DOI 10.17487/RFC8174,
               May 2017, <https://www.rfc-editor.org/info/rfc8174>.
-
-   [RFC8499]  Hoffman, P., Sullivan, A., and K. Fujiwara, "DNS
-              Terminology", BCP 219, RFC 8499, DOI 10.17487/RFC8499,
-              January 2019, <https://www.rfc-editor.org/info/rfc8499>.
-
-
-
-
-
-
-Flanagan & Crocker      Expires September 8, 2022              [Page 13]
-
-Internet-Draft        Registration Data Dictionary            March 2022
-
-
-   [RFC9083]  Hollenbeck, S. and A. Newton, "JSON Responses for the
-              Registration Data Access Protocol (RDAP)", STD 95,
-              RFC 9083, DOI 10.17487/RFC9083, June 2021,
-              <https://www.rfc-editor.org/info/rfc9083>.
 
 Authors' Addresses
 
@@ -747,28 +769,6 @@ Authors' Addresses
    Edgemoor Research Institute
 
    Email: steve@shinkuro.com
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

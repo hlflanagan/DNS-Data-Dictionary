@@ -7,6 +7,7 @@
 <!ENTITY RFC3629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3629.xml">
 <!ENTITY RFC5322 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5322.xml">
 <!ENTITY RFC5731 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5731.xml">
+<!ENTITY RFC5890 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5890.xml">
 <!ENTITY RFC8126 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8126.xml">
 <!ENTITY RFC8174 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8174.xml">
 <!ENTITY RFC8499 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8499.xml">
@@ -147,8 +148,8 @@ insensitive in the IANA registry.</t>
 
 <section anchor="element-name-domain-name" title="Element name: Domain Name">
 
-<t>This is the domain name in an EPP <xref target="RFC5731"/> domain object and
-it MUST be in A-Label format.</t>
+<t>This is the domain name as formatted according to the Internationalized
+  Domain Names for Applications (IDNA) specification.<xref target="RFC5890"/></t>
 
 <t>See also "Domain name" in <xref target="RFC8499"/>.</t>
 
@@ -168,38 +169,39 @@ naming convention enforced.</t>
 </section>
 
 <section anchor="element-name-reg-creation-date" title="Element name: Registration Creation Date">
-  <t>The EPP status code (&lt;domain:crDate&gt;) for the domain registration creation date.<xref target="RFC5731"/></t>
+  <t>The the date and time of domain object creation. Format TBD.</t>
 </section>
 
 <section anchor="element-name-reg-expiration-date" title="Element name: Registration Expiration Date">
-  <t>The EPP status code (&lt;domain:exDate&gt;) for the domain registration expiration date.<xref target="RFC5731"/></t>
+  <t>The date and time identifying the end of the domain object's registration period. Format TBD.</t>
 </section>
 
 <section anchor="element-name-reg-updated-date" title="Element name: Registration Updated Date">
-  <t>The EPP status code (&lt;domain:upDate&gt;) for the domain registration updated date.<xref target="RFC5731"/></t>
+  <t>The date and time of the most recent domain-object modification. Format TBD.</t>
 
 </section>
 
 <section anchor="element-name-reg-transfer-date" title="Element name: Registration Transfer Date">
-  <t>The EPP status code (&lt;domain:trDate&gt;) for the domain registration transfer date.<xref target="RFC5731"/></t>
+  <t>The date and time of the most recent successful domain-object transfer. Format TBD.</t>
 </section>
 
 <section anchor="element-name-protection" title="Element name: Protection">
-  <t>The level of protection assigned to a domain registration.</t>
+  <t>Defintion is TBD. It could include the level of protection assigned to a domain registration.</t>
 </section>
 
 <section anchor="element-name-nexus" title="Element name: Nexus">
 
-<t>The country, community, or geographic location of the account holder.</t>
+<t>Defintion is TBD. It could include the country, community, or geographic location of the account holder.</t>
 
 </section>
 <section anchor="element-name-person" title="Element name: Person">
 
-<t>Indication that the rules regarding this registration apply as per the
+<t>Defintion is TBD. It could include indication that the rules regarding this registration apply as per the
 registrant being a legal person or a natural person.</t>
 
 </section>
 <section anchor="element-name-personal" title="Element name: Personal">
+  <t>Definition is TBD.</t>
 
 </section>
 <section anchor="element-name-status-locks" title="Element name: Status &amp; Locks">
@@ -214,22 +216,22 @@ registrant being a legal person or a natural person.</t>
 </section>
 <section anchor="element-name-source-method" title="Element name: Source &amp; Method">
 
-<t>The back pointer from registry to registrant.</t>
+<t>Definition is TBD. It could include the back pointer from registry to registrant.</t>
 
 </section>
 <section anchor="element-name-payment-history" title="Element name: Payment History">
 
-<t>Information related to the customer’s financial exchanges.</t>
+<t>Definition is TBD. It could include information related to the customer’s financial exchanges.</t>
 
 </section>
 <section anchor="element-name-transaction-history" title="Element name: Transaction History">
 
-<t>[Is this same as 2.4.2?]</t>
+<t>Definition is TBD.</t>
 
 </section>
 <section anchor="element-name-user-account-id" title="Element name: User Account ID">
 
-<t>This is a customer ID at the registrar, reseller, or privacy/proxy
+<t>Definition is TBD. It could include a customer ID at the registrar, reseller, or privacy/proxy
 provider, respectively.</t>
 
 </section>
@@ -557,6 +559,15 @@ element.</t>
 
 </section>
 
+<section anchor="change-log" title="Draft Change Log">
+    <t>-01: Updated abstract to clarify that this draft does not intend to set policy.</t>
+    <t>-01: Updated definitions in 2.1, 2.4, 2.5, 2.6, 2.7 to remove normative reference to the EPP spec.</t>
+    <t>-01: Updated 2. Data Element specification to note local interpretation expected for any legal definitions.</t>
+    <t>-01: Added TBD to all data-related elements wrt format.</t>
+    <t>-01: Moved several items from informative to normative references.</t>
+</section>
+
+
 <section anchor="acknowledgements" title="Acknowledgements">
 
 <t>With many thanks to James Galvin and Rod Rasmussen for their advice and
@@ -567,17 +578,20 @@ element.</t>
 </middle>
 
 <back>
-<references title="Normative References">
+<references title="Informative References">
+  &RFC5731;
+  &RFC8499;
+  &RFC9083;
+</references>
 
+<references title="Normative References">
 &RFC1034;
 &RFC2119;
 &RFC3629;
 &RFC5322;
-&RFC5731;
+&RFC5890;
 &RFC8126;
 &RFC8174;
-&RFC8499;
-&RFC9083;
 
 <reference anchor="ISO3166-1" >
   <front>
