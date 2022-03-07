@@ -247,17 +247,17 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 2.8.  Element name: Protection
 
-   Defintion is TBD.  It could include the level of protection assigned
+   Definition is TBD.  It could include the level of protection assigned
    to a domain registration.
 
 2.9.  Element name: Nexus
 
-   Defintion is TBD.  It could include the country, community, or
+   Definition is TBD.  It could include the country, community, or
    geographic location of the account holder.
 
 2.10.  Element name: Person
 
-   Defintion is TBD.  It could include indication that the rules
+   Definition is TBD.  It could include indication that the rules
    regarding this registration apply as per the registrant being a legal
    person or a natural person.
 

@@ -186,17 +186,17 @@ naming convention enforced.</t>
 </section>
 
 <section anchor="element-name-protection" title="Element name: Protection">
-  <t>Defintion is TBD. It could include the level of protection assigned to a domain registration.</t>
+  <t>Definition is TBD. It could include the level of protection assigned to a domain registration.</t>
 </section>
 
 <section anchor="element-name-nexus" title="Element name: Nexus">
 
-<t>Defintion is TBD. It could include the country, community, or geographic location of the account holder.</t>
+<t>Definition is TBD. It could include the country, community, or geographic location of the account holder.</t>
 
 </section>
 <section anchor="element-name-person" title="Element name: Person">
 
-<t>Defintion is TBD. It could include indication that the rules regarding this registration apply as per the
+<t>Definition is TBD. It could include indication that the rules regarding this registration apply as per the
 registrant being a legal person or a natural person.</t>
 
 </section>
