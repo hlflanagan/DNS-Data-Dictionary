@@ -88,14 +88,14 @@ Table of Contents
      2.18. Element name: Name  . . . . . . . . . . . . . . . . . . .   6
      2.19. Element name: Org . . . . . . . . . . . . . . . . . . . .   6
      2.20. Element name: Street  . . . . . . . . . . . . . . . . . .   6
-     2.21. Element name: City  . . . . . . . . . . . . . . . . . . .   7
+     2.21. Element name: City  . . . . . . . . . . . . . . . . . . .   6
      2.22. Element name: State/Province  . . . . . . . . . . . . . .   7
      2.23. Element name: Postal code . . . . . . . . . . . . . . . .   7
      2.24. Element name: Country . . . . . . . . . . . . . . . . . .   7
      2.25. Element name: Phone . . . . . . . . . . . . . . . . . . .   7
      2.26. Element name: Phone ext . . . . . . . . . . . . . . . . .   7
      2.27. Element name: Fax . . . . . . . . . . . . . . . . . . . .   7
-     2.28. Element name: Fax ext . . . . . . . . . . . . . . . . . .   8
+     2.28. Element name: Fax ext . . . . . . . . . . . . . . . . . .   7
      2.29. Element name: Email . . . . . . . . . . . . . . . . . . .   8
      2.30. Element name: Email_or_phone  . . . . . . . . . . . . . .   8
      2.31. Element name: Registry UniqueID . . . . . . . . . . . . .   8
@@ -247,19 +247,15 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 2.8.  Element name: Protection
 
-   Definition is TBD.  It could include the level of protection assigned
-   to a domain registration.
+   Definition is TBD.
 
 2.9.  Element name: Nexus
 
-   Definition is TBD.  It could include the country, community, or
-   geographic location of the account holder.
+   Definition is TBD.
 
 2.10.  Element name: Person
 
-   Definition is TBD.  It could include indication that the rules
-   regarding this registration apply as per the registrant being a legal
-   person or a natural person.
+   Definition is TBD.
 
 2.11.  Element name: Personal
 
@@ -277,6 +273,10 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 
 
+
+
+
+
 Flanagan & Crocker      Expires September 8, 2022               [Page 5]
 
 Internet-Draft        Registration Data Dictionary            March 2022
@@ -284,13 +284,11 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 2.13.  Element name: Source & Method
 
-   Definition is TBD.  It could include the back pointer from registry
-   to registrant.
+   Definition is TBD.
 
 2.14.  Element name: Payment History
 
-   Definition is TBD.  It could include information related to the
-   customer's financial exchanges.
+   Definition is TBD.
 
 2.15.  Element name: Transaction History
 
@@ -298,8 +296,7 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
 2.16.  Element name: User Account ID
 
-   Definition is TBD.  It could include a customer ID at the registrar,
-   reseller, or privacy/proxy provider, respectively.
+   Definition is TBD.
 
 2.17.  Element name: Reserved
 
@@ -326,6 +323,9 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
    Postal street address, formatted as per [ISO19160-4].
 
+2.21.  Element name: City
+
+   Postal city address, formatted as per [ISO19160-4].
 
 
 
@@ -337,10 +337,6 @@ Flanagan & Crocker      Expires September 8, 2022               [Page 6]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
-
-2.21.  Element name: City
-
-   Postal city address, formatted as per [ISO19160-4].
 
 2.22.  Element name: State/Province
 
@@ -383,7 +379,11 @@ Internet-Draft        Registration Data Dictionary            March 2022
    followed by a dot (".", ASCII value 0x002E), followed by a sequence
    of digits representing the telephone number.
 
+2.28.  Element name: Fax ext
 
+   This field is an "extension" within a phone tree or PBX that is
+   necessary to connect to a fax machine after successfully dialing the
+   fax element.
 
 
 
@@ -393,12 +393,6 @@ Flanagan & Crocker      Expires September 8, 2022               [Page 7]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
-
-2.28.  Element name: Fax ext
-
-   This field is an "extension" within a phone tree or PBX that is
-   necessary to connect to a fax machine after successfully dialing the
-   fax element.
 
 2.29.  Element name: Email
 
@@ -442,6 +436,12 @@ Internet-Draft        Registration Data Dictionary            March 2022
    appointment of designated experts and the evaluation of a new data
    element is provided here.
 
+   The IESG SHOULD appoint a small pool of individuals (perhaps 3 - 5)
+   to serve as designated experts, as described in Section 5.2 of RFC
+   8126.  The pool should have a single administrative chair who is
+   appointed by the IESG.  The designated experts should use the
+   existing regext mailing list (regext@ietf.org) for public discussion
+
 
 
 
@@ -450,11 +450,6 @@ Flanagan & Crocker      Expires September 8, 2022               [Page 8]
 Internet-Draft        Registration Data Dictionary            March 2022
 
 
-   The IESG SHOULD appoint a small pool of individuals (perhaps 3 - 5)
-   to serve as designated experts, as described in Section 5.2 of RFC
-   8126.  The pool should have a single administrative chair who is
-   appointed by the IESG.  The designated experts should use the
-   existing regext mailing list (regext@ietf.org) for public discussion
    of registration requests.  This implies that the mailing list should
    remain open after the work of the REGEXT working group has concluded.
 
@@ -497,7 +492,12 @@ Internet-Draft        Registration Data Dictionary            March 2022
    following registration form.  Form field names and values may appear
    on the same line.
 
+3.1.2.1.1.  Data Element Definition
 
+   Name of data element type
+
+   MUST be unique within the registry, enforced to be unique, and MUST
+   be processed as case insensitive
 
 
 
@@ -505,13 +505,6 @@ Flanagan & Crocker      Expires September 8, 2022               [Page 9]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
-
-3.1.2.1.1.  Data Element Definition
-
-   Name of data element type
-
-   MUST be unique within the registry, enforced to be unique, and MUST
-   be processed as case insensitive
 
    Name of data element
 
@@ -554,6 +547,13 @@ Internet-Draft        Registration Data Dictionary            March 2022
    When submitting changes to existing registry entries, include text in
    the "Notes" field of the registration form describing the change.
    Under normal circumstances, registry entries are only to be updated
+   by the registrant.  If the registrant becomes unavailable or
+   otherwise unresponsive, the designated expert can submit a
+   registration form to IANA to update the registrant information.
+   Entries can change state from "Active" to "Inactive" and back again
+   as long as state-change requests conform to the processing
+   requirements identified in this document.  In addition to entries
+   that become "Inactive" due to a lack of implementation, entries for
 
 
 
@@ -562,13 +562,6 @@ Flanagan & Crocker      Expires September 8, 2022              [Page 10]
 Internet-Draft        Registration Data Dictionary            March 2022
 
 
-   by the registrant.  If the registrant becomes unavailable or
-   otherwise unresponsive, the designated expert can submit a
-   registration form to IANA to update the registrant information.
-   Entries can change state from "Active" to "Inactive" and back again
-   as long as state-change requests conform to the processing
-   requirements identified in this document.  In addition to entries
-   that become "Inactive" due to a lack of implementation, entries for
    which a specification becomes consistently unavailable over time
    should be marked "Inactive" by the designated expert until the
    specification again becomes reliably available.
@@ -611,18 +604,19 @@ Internet-Draft        Registration Data Dictionary            March 2022
 
    IESG, iesg@ietf.org
 
+   Status:
+
+   Active
+
+   --- END FORM ---
+
+
 
 
 Flanagan & Crocker      Expires September 8, 2022              [Page 11]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
-
-   Status:
-
-   Active
-
-   --- END FORM ---
 
 4.  Security Considerations
 
@@ -667,16 +661,18 @@ Internet-Draft        Registration Data Dictionary            March 2022
    -01: Updated 2.  Data Element specification to note local
    interpretation expected for any legal definitions.
 
+   -01: Added TBD to policy-related items, all data-related elements wrt
+   format.
+
+   -01: Moved several items from informative to normative references.
+
+
 
 
 Flanagan & Crocker      Expires September 8, 2022              [Page 12]
 
 Internet-Draft        Registration Data Dictionary            March 2022
 
-
-   -01: Added TBD to all data-related elements wrt format.
-
-   -01: Moved several items from informative to normative references.
 
 8.  Acknowledgements
 
@@ -722,6 +718,10 @@ Internet-Draft        Registration Data Dictionary            March 2022
    [RFC1034]  Mockapetris, P., "Domain names - concepts and facilities",
               STD 13, RFC 1034, DOI 10.17487/RFC1034, November 1987,
               <https://www.rfc-editor.org/info/rfc1034>.
+
+
+
+
 
 
 

@@ -186,18 +186,17 @@ naming convention enforced.</t>
 </section>
 
 <section anchor="element-name-protection" title="Element name: Protection">
-  <t>Definition is TBD. It could include the level of protection assigned to a domain registration.</t>
+  <t>Definition is TBD.</t>
 </section>
 
 <section anchor="element-name-nexus" title="Element name: Nexus">
 
-<t>Definition is TBD. It could include the country, community, or geographic location of the account holder.</t>
+<t>Definition is TBD.</t>
 
 </section>
 <section anchor="element-name-person" title="Element name: Person">
 
-<t>Definition is TBD. It could include indication that the rules regarding this registration apply as per the
-registrant being a legal person or a natural person.</t>
+<t>Definition is TBD.</t>
 
 </section>
 <section anchor="element-name-personal" title="Element name: Personal">
@@ -216,12 +215,12 @@ registrant being a legal person or a natural person.</t>
 </section>
 <section anchor="element-name-source-method" title="Element name: Source &amp; Method">
 
-<t>Definition is TBD. It could include the back pointer from registry to registrant.</t>
+<t>Definition is TBD.</t>
 
 </section>
 <section anchor="element-name-payment-history" title="Element name: Payment History">
 
-<t>Definition is TBD. It could include information related to the customer’s financial exchanges.</t>
+<t>Definition is TBD.</t>
 
 </section>
 <section anchor="element-name-transaction-history" title="Element name: Transaction History">
@@ -231,8 +230,7 @@ registrant being a legal person or a natural person.</t>
 </section>
 <section anchor="element-name-user-account-id" title="Element name: User Account ID">
 
-<t>Definition is TBD. It could include a customer ID at the registrar, reseller, or privacy/proxy
-provider, respectively.</t>
+<t>Definition is TBD.</t>
 
 </section>
 <section anchor="element-name-reserved" title="Element name: Reserved">
@@ -563,7 +561,7 @@ element.</t>
     <t>-01: Updated abstract to clarify that this draft does not intend to set policy.</t>
     <t>-01: Updated definitions in 2.1, 2.4, 2.5, 2.6, 2.7 to remove normative reference to the EPP spec.</t>
     <t>-01: Updated 2. Data Element specification to note local interpretation expected for any legal definitions.</t>
-    <t>-01: Added TBD to all data-related elements wrt format.</t>
+    <t>-01: Added TBD to policy-related items, all data-related elements wrt format.</t>
     <t>-01: Moved several items from informative to normative references.</t>
 </section>
 
