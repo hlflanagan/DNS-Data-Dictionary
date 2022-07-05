@@ -4,8 +4,6 @@
 <!DOCTYPE rfc SYSTEM "rfc2629.dtd" [
 <!ENTITY RFC1034 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.1034.xml">
 <!ENTITY RFC2119 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.2119.xml">
-<!ENTITY RFC3629 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.3629.xml">
-<!ENTITY RFC5322 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5322.xml">
 <!ENTITY RFC5731 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5731.xml">
 <!ENTITY RFC5890 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.5890.xml">
 <!ENTITY RFC8126 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.8126.xml">
@@ -14,7 +12,7 @@
 <!ENTITY RFC9083 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.9083.xml">
 ]>
 
-<rfc ipr="trust200902" docName="draft-ietf-regext-datadictionary-01" category="std">
+<rfc ipr="trust200902" docName="draft-ietf-regext-datadictionary-02" category="std">
 
 <?rfc toc="yes"?>
 <?rfc sortrefs="yes"?>
@@ -57,7 +55,7 @@
       </address>
     </author>
 
-    <date year="2022" month="March" day="7"/>
+    <date year="2022" month="July" day="5"/>
 
     <area>Applications</area>
     <workgroup></workgroup>
@@ -83,8 +81,8 @@
 
 <section anchor="introduction" title="Introduction">
 
-<t>The DNS Data Dictionary provides a common set of names and definitions for
-  data elements which may be used in a DNS related protocol.  The dictionary
+<t>The Registration Data Dictionary provides a common set of names and definitions for
+  data elements which may be used in any registration protocol, including the DNS.  The dictionary
   is intended to be inclusive and not obligatory.  That is, the existence of
   a data element in this dictionary does not imply the data element must be used
   or recognized in any particular protocol. The items in this dictionary should
@@ -95,14 +93,14 @@
   documented as part of the application or protocol specification.</t>
 
 <t>The data dictionary currently has thirty-one data elements.
-  These data elements include the DNS records, the detailed status of a
-  registration to the details for each of the contacts, and the account details
+  These data elements include the metadata regarding the registration, the detailed status of a
+  registration, details for each of the contacts, and the account details
   and payment history.  The proposed IANA registry lists standard data elements
-  and their syntax for inclusion in the files.</t>
+  and is each element will be versioned in the registry.</t>
 
-<t>We expect the DNS data dictionary to evolve to meet the needs of various
+<t>We expect the Registration Data Dictionary to evolve to meet the needs of various
   applications.  With the exception of correction of errors, we expect the
-  changes to the DNS Data Dictionary to be additions as opposed to deletions or
+  changes to the Registration Data Dictionary to be additions as opposed to deletions or
   changes.</t>
 
 <t>[Comment: We are looking for additional authors and contributors to add to
@@ -148,41 +146,39 @@ insensitive in the IANA registry.</t>
 
 <section anchor="element-name-domain-name" title="Element name: Domain Name">
 
-<t>This is the domain name as formatted according to the Internationalized
-  Domain Names for Applications (IDNA) specification.<xref target="RFC5890"/></t>
+<t>This is the name of the object being registered, e.g., the domain name.<xref target="RFC5890"/></t>
 
-<t>See also "Domain name" in <xref target="RFC8499"/>.</t>
+<t>See also " name" in <xref target="RFC8499"/>.</t>
 
 </section>
 <section anchor="element-name-registry" title="Element name: Registry">
 
-<t>The name of the registry. This data element is text/string with no
-naming convention enforced.</t>
+<t>The name of the registry.</t>
 
 <t>See also "Registry" in <xref target="RFC8499"/>.</t>
 
 </section>
 
 <section anchor="element-name-ns" title="Element name: NS">
-  <t>The authoritative name server for the domain.<xref target="RFC1034"/></t>
+  <t>The authoritative name server for the registration.<xref target="RFC1034"/></t>
   <t>See also "Authoritative server" in <xref target="RFC8499"/></t>
 </section>
 
 <section anchor="element-name-reg-creation-date" title="Element name: Registration Creation Date">
-  <t>The the date and time of domain object creation. Format TBD.</t>
+  <t>The the date and time of the object's creation.</t>
 </section>
 
 <section anchor="element-name-reg-expiration-date" title="Element name: Registration Expiration Date">
-  <t>The date and time identifying the end of the domain object's registration period. Format TBD.</t>
+  <t>The date and time identifying the end of the registration period.</t>
 </section>
 
 <section anchor="element-name-reg-updated-date" title="Element name: Registration Updated Date">
-  <t>The date and time of the most recent domain-object modification. Format TBD.</t>
+  <t>The date and time of the most recent modification of the registration data.</t>
 
 </section>
 
 <section anchor="element-name-reg-transfer-date" title="Element name: Registration Transfer Date">
-  <t>The date and time of the most recent successful domain-object transfer. Format TBD.</t>
+  <t>The date and time of the most recent successful registration transfer.</t>
 </section>
 
 <section anchor="element-name-protection" title="Element name: Protection">
@@ -207,8 +203,8 @@ naming convention enforced.</t>
 
 <t>Examples include the EPP (Section 2.3 of <xref target="RFC5731"/>) and RDAP (Section 10.2.2
   of <xref target="RFC9083"/>) codes (ex: clientTransferProhibited) that describe the current
-  state of a registered domain name and the protocol actions that can (or
-  cannot) be performed on the domain name. A registered domain name MAY be
+  state of a registered object and the protocol actions that can (or
+  cannot) be performed on the registered object. A registered object MAY be
   associated with multiple status values. Other managed objects, including name
   server and contact objects, can also have status and lock values.</t>
 
@@ -241,57 +237,42 @@ necessary, but the field was left intact for future use]</t>
 </section>
 <section anchor="element-name-name" title="Element name: Name">
 
-<t>Individual name is represented using character strings. These strings
-have a specified minimum length and a specified maximum length.
-Individual names MAY be provided in either UTF-8 <xref target="RFC3629"/> or a subset
-of UTF-8 that can be represented in 7-bit ASCII, depending on local
-needs.</t>
+<t>Individual name is represented using character strings.</t>
 
 </section>
 <section anchor="element-name-org" title="Element name: Org">
 
-<t>Organization name is represented using character strings. These strings
-have a specified minimum length and a specified maximum length.
-Organizational names MAY be provided in either UTF-8 <xref target="RFC3629"/> or a subset of UTF-8 that can be represented in 7-bit ASCII, depending on local needs.</t>
+<t>Organization name is represented using character strings.</t>
 
 </section>
 <section anchor="element-name-street" title="Element name: Street">
 
-<t>Postal street address, formatted as per <xref target="ISO19160-4"/>.</t>
+<t>Postal street address.</t>
 
 </section>
 <section anchor="element-name-city" title="Element name: City">
 
-<t>Postal city address, formatted as per <xref target="ISO19160-4"/>.</t>
+<t>Postal city address.</t>
 
 </section>
 <section anchor="element-name-stateprovince" title="Element name: State/Province">
 
-<t>Postal state or province address, formatted as per <xref target="ISO19160-4"/>.</t>
+<t>Postal state or province address.</t>
 
 </section>
 <section anchor="element-name-postal-code" title="Element name: Postal code">
 
-<t>Postal code, formatted as per <xref target="ISO19160-4"/>. Contact postal codes are
-represented using character strings. These strings have a specified
-minimum length and a specified maximum length.</t>
+<t>Postal code.</t>
 
 </section>
 <section anchor="element-name-country" title="Element name: Country">
 
-<t>Country code identifier. Contact country identifiers are represented
-using two-character identifiers specified in <xref target="ISO3166-1"/>.</t>
+<t>Country code identifier.</t>
 
 </section>
 <section anchor="element-name-phone" title="Element name: Phone">
 
-<t>Telephone number structure is derived from structures defined in
-<xref target="ITU.E164.2005"/>. Telephone numbers described in this mapping are
-character strings that MUST begin with a plus sign (“+”, ASCII value
-0x002B), followed by a country code defined in [ITU.E164.2005],
-followed by a dot (“.”, ASCII value 0x002E), followed by a sequence of
-digits representing the telephone number. An optional “x” attribute is
-provided to note telephone extension information.</t>
+<t>Telephone number.</t>
 
 </section>
 <section anchor="element-name-phone-ext" title="Element name: Phone ext">
@@ -303,12 +284,7 @@ queue or mailbox after successfully dialing the Phone element.</t>
 </section>
 <section anchor="element-name-fax" title="Element name: Fax">
 
-<t>Fax telephone number structure is derived from structures defined in
-[ITU.E164.2005]. Telephone numbers described in this mapping are
-character strings that MUST begin with a plus sign (“+”, ASCII value
-0x002B), followed by a country code defined in <xref target="ITU.E164.2005"/>,
-followed by a dot (“.”, ASCII value 0x002E), followed by a sequence of
-digits representing the telephone number.</t>
+<t>Fax telephone number.</t>
 
 </section>
 <section anchor="element-name-fax-ext" title="Element name: Fax ext">
@@ -319,7 +295,7 @@ element.</t>
 
 </section>
 <section anchor="element-name-email" title="Element name: Email">
-  <t>Email address syntax is defined in <xref target="RFC5322"/>.</t>
+  <t>Email address.</t>
 </section>
 
 <section anchor="element-name-emailorphone" title="Element name: Email_or_phone">
@@ -329,19 +305,15 @@ element.</t>
 
 <section anchor="element-name-uniqueid" title="Element name: Registry UniqueID">
   <t>This field represents server-unique identifiers assigned to entities, such
-    as clients and contacts. These identifiers are character strings that
-    typically have a specified minimum length, a specified maximum length, and a
-    specified format.</t>
+    as clients and contacts.</t>
 </section>
 
 </section>
 <section anchor="iana-considerations" title="IANA Considerations">
 
-<t>This section describes the format of the IANA Registration Report</t>
-
-<t>Registry, which has two tables described below, and the procedures</t>
-
-<t>used to populate and manage the registry entries.</t>
+<t>This section describes the format of the IANA Registration Report
+  Registry, which has two tables described below, and the procedures used to
+  populate and manage the registry entries.</t>
 
 <section anchor="report-specification" title="Report Specification">
 
@@ -484,7 +456,7 @@ element.</t>
 
 <t>Name of data element:</t>
 
-<t>Domain Name</t>
+<t> Name</t>
 
 <t>Reference:</t>
 
@@ -552,12 +524,15 @@ element.</t>
 
 <t>The character encoding for the file contents MUST use UTF-8. Throughout this
   document A-LABEL is indicated as a SHOULD and that MUST be interpreted as
-  follows. All domain name labels MUST be in A-LABEL format if it is possible to
+  follows. All  name labels MUST be in A-LABEL format if it is possible to
   represent it as an A-LABEL, otherwise U-LABEL MAY be used.</t>
 
 </section>
 
 <section anchor="change-log" title="Draft Change Log">
+    <t>-02: Removed all format syntax guidance.</t>
+    <t>-02: Removed specific references to domain names and DNS where possible.</t>
+    <t>-02: Revised the Introduction.</t>
     <t>-01: Updated abstract to clarify that this draft does not intend to set policy.</t>
     <t>-01: Updated definitions in 2.1, 2.4, 2.5, 2.6, 2.7 to remove normative reference to the EPP spec.</t>
     <t>-01: Updated 2. Data Element specification to note local interpretation expected for any legal definitions.</t>
@@ -585,45 +560,9 @@ element.</t>
 <references title="Normative References">
 &RFC1034;
 &RFC2119;
-&RFC3629;
-&RFC5322;
 &RFC5890;
 &RFC8126;
 &RFC8174;
-
-<reference anchor="ISO3166-1" >
-  <front>
-    <title>ISO3166-1: Codes for the representation of names of countries and
-      their subdivisions -- Part1: Country codes</title>
-    <author>
-      <organization>International Organization for Standardization</organization>
-    </author>
-    <date month="November" year="2006"/>
-  </front>
-</reference>
-
-<reference anchor="ISO19160-4" >
-  <front>
-    <title>ISO19160-4: Addressing — Part 4: International postal address
-      components and template language</title>
-    <author>
-      <organization>International Organization for Standardization</organization>
-    </author>
-    <date month="November" year="2017"/>
-  </front>
-</reference>
-
-<reference anchor="ITU.E164.2005" >
-  <front>
-    <title>ITU-T Recommendation E.164: The international public telecommunication numbering plan</title>
-    <author>
-      <organization>International Telecommunication Union</organization>
-    </author>
-    <date month="February" year="2005"/>
-  </front>
-</reference>
-
-
 
 </references>
 
