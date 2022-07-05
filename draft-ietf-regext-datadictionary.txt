@@ -5,7 +5,7 @@
 Network Working Group                                   H. Flanagan, Ed.
 Internet-Draft                                                S. Crocker
 Intended status: Standards Track             Edgemoor Research Institute
-Expires: November 20, 2022                                  May 19, 2022
+Expires: January 6, 2023                                    July 5, 2022
 
 
                       Registration Data Dictionary
@@ -38,7 +38,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on November 20, 2022.
+   This Internet-Draft will expire on January 6, 2023.
 
 Copyright Notice
 
@@ -53,9 +53,9 @@ Copyright Notice
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 1]
+Flanagan & Crocker       Expires January 6, 2023                [Page 1]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
    to this document.  Code Components extracted from this document must
@@ -109,9 +109,9 @@ Table of Contents
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 2]
+Flanagan & Crocker       Expires January 6, 2023                [Page 2]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
    5.  Privacy Considerations  . . . . . . . . . . . . . . . . . . .  11
@@ -165,9 +165,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 3]
+Flanagan & Crocker       Expires January 6, 2023                [Page 3]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
 2.  Data Element Specification
@@ -221,9 +221,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 4]
+Flanagan & Crocker       Expires January 6, 2023                [Page 4]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
 2.4.  Element name: Registration Creation Date
@@ -277,9 +277,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 5]
+Flanagan & Crocker       Expires January 6, 2023                [Page 5]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
 2.13.  Element name: Source & Method
@@ -333,9 +333,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 6]
+Flanagan & Crocker       Expires January 6, 2023                [Page 6]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
 2.24.  Element name: Country
@@ -389,9 +389,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 7]
+Flanagan & Crocker       Expires January 6, 2023                [Page 7]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
 3.1.  Report Specification
@@ -445,9 +445,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 8]
+Flanagan & Crocker       Expires January 6, 2023                [Page 8]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
    similar data elements or reports.  Should they decline to do so,
@@ -501,9 +501,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022               [Page 9]
+Flanagan & Crocker       Expires January 6, 2023                [Page 9]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
 3.1.2.2.  Registration Processing
@@ -557,9 +557,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022              [Page 10]
+Flanagan & Crocker       Expires January 6, 2023               [Page 10]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
    Status:
@@ -613,9 +613,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022              [Page 11]
+Flanagan & Crocker       Expires January 6, 2023               [Page 11]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
    issues with their local legal authority and develop appropriate
@@ -669,9 +669,9 @@ Internet-Draft        Registration Data Dictionary              May 2022
 
 
 
-Flanagan & Crocker      Expires November 20, 2022              [Page 12]
+Flanagan & Crocker       Expires January 6, 2023               [Page 12]
 
-Internet-Draft        Registration Data Dictionary              May 2022
+Internet-Draft        Registration Data Dictionary             July 2022
 
 
    [RFC8499]  Hoffman, P., Sullivan, A., and K. Fujiwara, "DNS
@@ -725,4 +725,4 @@ Authors' Addresses
 
 
 
-Flanagan & Crocker      Expires November 20, 2022              [Page 13]
+Flanagan & Crocker       Expires January 6, 2023               [Page 13]
