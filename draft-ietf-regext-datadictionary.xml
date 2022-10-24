@@ -12,7 +12,7 @@
 <!ENTITY RFC9083 SYSTEM "http://xml.resource.org/public/rfc/bibxml/reference.RFC.9083.xml">
 ]>
 
-<rfc ipr="trust200902" docName="draft-ietf-regext-datadictionary-02" category="std">
+<rfc ipr="trust200902" docName="draft-ietf-regext-datadictionary-03" category="std">
 
 <?rfc toc="yes"?>
 <?rfc sortrefs="yes"?>
@@ -55,7 +55,7 @@
       </address>
     </author>
 
-    <date year="2022" month="July" day="5"/>
+    <date year="2022" month="October" day="21"/>
 
     <area>Applications</area>
     <workgroup></workgroup>
@@ -66,7 +66,7 @@
 <t>Multiple applications related to the registration of names and other
   identifiers are built around a list of data elements. There is currently no
   unified public list of these data elements, nor is there an organized and
-  independent change control process. This document codifies the multiple
+  independent change control process. This document compiles the multiple
   similar but not quite identical lists of data elements into a neutral Data
   Dictionary to be maintained as an independent IANA Registry.  The Data
   Dictionary defines data elements but does not specify which ones are to be
@@ -82,21 +82,21 @@
 <section anchor="introduction" title="Introduction">
 
 <t>The Registration Data Dictionary provides a common set of names and definitions for
-  data elements which may be used in any registration protocol, including the DNS.  The dictionary
+  data element that may be used in any registration protocol, including the DNS.  The dictionary
   is intended to be inclusive and not obligatory.  That is, the existence of
   a data element in this dictionary does not imply the data element must be used
   or recognized in any particular protocol. The items in this dictionary should
-  represent the union for what is in existing relevant protocols, and should
+  represent the union for what is in existing relevant protocols and should
   prevent divergence in new protocols. We also expect that each
   application or protocol may have additional requirements specific to the
   application or protocol. Such additional requirements should be
   documented as part of the application or protocol specification.</t>
 
-<t>The data dictionary currently has thirty-one data elements.
-  These data elements include the metadata regarding the registration, the detailed status of a
+<t>The data elements in this dictionary include the metadata regarding the
+  registration, the detailed status of a
   registration, details for each of the contacts, and the account details
-  and payment history.  The proposed IANA registry lists standard data elements
-  and is each element will be versioned in the registry.</t>
+  and payment history.  The proposed IANA registry lists standard data elements;
+  each element will be versioned in the registry.</t>
 
 <t>We expect the Registration Data Dictionary to evolve to meet the needs of various
   applications.  With the exception of correction of errors, we expect the
@@ -122,7 +122,7 @@
 <t>Each data element is a single unit of information that can be collected
 and compared during the registration process. The primary purposes of
 the IANA registry of data elements are to ensure that each data element
-is assigned a unique name and that the syntax of each data element is
+is assigned a unique name and the syntax of each data element is
 specified.</t>
 
 <t>Each data element is assigned to an element type to organize the
@@ -148,7 +148,7 @@ insensitive in the IANA registry.</t>
 
 <t>This is the name of the object being registered, e.g., the domain name.<xref target="RFC5890"/></t>
 
-<t>See also " name" in <xref target="RFC8499"/>.</t>
+<t>See also "domain name" in <xref target="RFC8499"/>.</t>
 
 </section>
 <section anchor="element-name-registry" title="Element name: Registry">
@@ -165,7 +165,7 @@ insensitive in the IANA registry.</t>
 </section>
 
 <section anchor="element-name-reg-creation-date" title="Element name: Registration Creation Date">
-  <t>The the date and time of the object's creation.</t>
+  <t>The date and time of the object's creation.</t>
 </section>
 
 <section anchor="element-name-reg-expiration-date" title="Element name: Registration Expiration Date">
@@ -182,21 +182,28 @@ insensitive in the IANA registry.</t>
 </section>
 
 <section anchor="element-name-protection" title="Element name: Protection">
-  <t>Definition is TBD.</t>
+  <t>A description of the rulesets used to offer different levels of protection
+  to the registrant. This attribute indicates whether the registration requires
+  extra versus normal protection.  In the case of domain name registration, this
+  attribute can be used flag the need for additional protection for celebrities,
+  politicians, at risk NGOs, etc.</t>
 </section>
 
 <section anchor="element-name-nexus" title="Element name: Nexus">
 
-<t>Definition is TBD.</t>
+<t>Describes whether the registration is from someone in the correct group,
+region, or other qualification required for the registration.</t>
 
 </section>
 <section anchor="element-name-person" title="Element name: Person">
 
-<t>Definition is TBD.</t>
+<t>Record of whether this registration is for a legal or a natural person.</t>
 
 </section>
 <section anchor="element-name-personal" title="Element name: Personal">
-  <t>Definition is TBD.</t>
+  <t>Record of whether this registration may contains personally identifiable
+  information, based on the interpretation of applicable laws by the registrar
+  or registration authority.</t>
 
 </section>
 <section anchor="element-name-status-locks" title="Element name: Status &amp; Locks">
@@ -211,43 +218,30 @@ insensitive in the IANA registry.</t>
 </section>
 <section anchor="element-name-source-method" title="Element name: Source &amp; Method">
 
-<t>Definition is TBD.</t>
+<t>The back pointer from registry to registrant. When registration information
+is supplied from another source, this field names that source.</t>
 
 </section>
-<section anchor="element-name-payment-history" title="Element name: Payment History">
 
-<t>Definition is TBD.</t>
-
-</section>
-<section anchor="element-name-transaction-history" title="Element name: Transaction History">
-
-<t>Definition is TBD.</t>
-
-</section>
 <section anchor="element-name-user-account-id" title="Element name: User Account ID">
 
-<t>Definition is TBD.</t>
+<t>This is a customer ID at the registrar, reseller, or privacy/proxy provider, respectively.</t>
 
 </section>
-<section anchor="element-name-reserved" title="Element name: Reserved">
 
-<t>[this field is an artifact of prior use which was determined to not be
-necessary, but the field was left intact for future use]</t>
-
-</section>
 <section anchor="element-name-name" title="Element name: Name">
 
-<t>Individual name is represented using character strings.</t>
+<t>Individual name.</t>
 
 </section>
 <section anchor="element-name-org" title="Element name: Org">
 
-<t>Organization name is represented using character strings.</t>
+<t>Organization name.</t>
 
 </section>
 <section anchor="element-name-street" title="Element name: Street">
 
-<t>Postal street address.</t>
+<t>Physical street address.</t>
 
 </section>
 <section anchor="element-name-city" title="Element name: City">
@@ -530,6 +524,9 @@ element.</t>
 </section>
 
 <section anchor="change-log" title="Draft Change Log">
+    <t>-03: Editorial updates to abstract, introduction</t>
+    <t>-03: Added definitions to Protection, Nexus, Person, Personal, Source and Method, User Account ID</t>
+    <t>-03: Removed Payment History, Transaction History, and Reserved elements.</t>
     <t>-02: Removed all format syntax guidance.</t>
     <t>-02: Removed specific references to domain names and DNS where possible.</t>
     <t>-02: Revised the Introduction.</t>
